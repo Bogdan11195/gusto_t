@@ -1,20 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-        <section>
+            <section id="events">
+        <h1>Події та заходи</h1>
         <div class="container">
             <div class="row">
-                {% for item in banners %}
+                {% for item in events %}
                     <div class="col-xs-12 col-sm-6">
-                        <h2>{{ item.title }}</h2>
+                        <h3><a href="/events/{{ item.pk }}">{{ item.title }}</a></h3>
+                        <div><h5>{{ item.event_date }}</h5></div>
+                        <div><h5>{{ item.event_time }}</h5></div>
                         <div><img src="{{ item.photo.url }}" class="img-fluid" alt="Responsive image"></div>
+                        <div><p>{{ item.description }}</p></div>
+                        {% if item.price > 0 %}
+                        <div><p>{{ item.price }} &#8372;</p></div>
+                        {% endif %}
                     </div>
                 {% endfor %}
             </div>
         </div>
     </section>
 
-        <section>
+        <section id="special_menu">
         <h1>Специальные предложения</h1>
         <div class="container">
             <div class="row">
@@ -23,7 +30,7 @@
                         <h3>{{ item.title }}</h3>
                         {% for dish in item.dishes %}
                             <div>
-                                <div><h5>{{ dish.title }}</h5></div>
+                                <div><h5><a href="/chiefmenu/{{ dish.pk }}">{{ dish.title }}</a></h5></div>
                                 <div><img src="{{ dish.photo.url }}" class="img-fluid" alt="Responsive image"></div>
                                 <div><p>{{ dish.description }}</p></div>
                                 <div><p>{{ dish.price }} &#8372;</p></div>
@@ -35,7 +42,7 @@
         </div>
     </section>
 
-        <section>
+        <section id="menu">
         <h1>Меню</h1>
         <div class="container">
             <div class="row">
@@ -44,7 +51,7 @@
                         <h3>{{ item.title }}</h3>
                         {% for dish in item.dishes %}
                             <div>
-                                <div><h5>{{ dish.title }}</h5></div>
+                                <div><h5><a href="/menu/{{ dish.pk }}">{{ dish.title }}</a></h5></div>
                                 <div><img src="{{ dish.photo.url }}" class="img-fluid" alt="Responsive image"></div>
                                 <div><p>{{ dish.description }}</p></div>
                                 <div><p>{{ dish.price }} &#8372;</p></div>
@@ -56,18 +63,37 @@
         </div>
     </section>
 
+    <section id="reservation">
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2">
+            <form name="sendMessage" id="contactForm" novalidate action="" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form.user_name }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.user_email }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form.message }}
+                    </div>
+                </div>
+                <button type="submit" class="btn-lg">Відправити повідомлення</button>
+            </form>
+        </div>
+    </div>
+</section>
+
         <section>
-        <h1>Події та заходи</h1>
         <div class="container">
             <div class="row">
-                {% for item in events %}
+                {% for item in banners %}
                     <div class="col-xs-12 col-sm-6">
-                        <h3>{{ item.title }}</h3>
-                        <div><h5>{{ item.event_date }}</h5></div>
-                        <div><h5>{{ item.event_time }}</h5></div>
+                        <h2>{{ item.title }}</h2>
                         <div><img src="{{ item.photo.url }}" class="img-fluid" alt="Responsive image"></div>
-                        <div><p>{{ item.description }}</p></div>
-                        <div><p>{{ item.price }} &#8372;</p></div>
                     </div>
                 {% endfor %}
             </div>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <div><h5>{{ dish.title }}</h5></div>
+        <div><img src="{{ dish.photo.url }}" class="img-fluid" alt="Responsive image"></div>
+        <div><p>{{ dish.description }}</p></div>
+        <div><p>{{ dish.price }} &#8372;</p></div>
+    </div>
+{% endblock %}
