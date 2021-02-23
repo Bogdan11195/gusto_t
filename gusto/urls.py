@@ -24,6 +24,7 @@ urlpatterns = [
     path('menu/', include('menu_gusto.urls')),
     path('chiefmenu/', include('menu_gusto.urls')),
     path('events/', include('events_gusto.urls')),
+    path('users_messages/', include('users_messages.urls'))
 ]
 
 if settings.DEBUG:
