@@ -34,7 +34,7 @@ SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['gusto-t-09-03-21.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -70,7 +70,7 @@ ROOT_URLCONF = 'gusto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [BASE_DIR / 'templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
