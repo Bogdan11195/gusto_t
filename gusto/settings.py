@@ -34,7 +34,7 @@ SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gusto-t-09-03-21.herokuapp.com']
 
 
 # Application definition
