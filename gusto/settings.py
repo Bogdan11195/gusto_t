@@ -21,15 +21,15 @@ DB_HOST = os.environ.get('DB_HOST')
 DB_USER = os.environ.get('DB_USER')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'cdfc7v**zparvg46@xq3sqd=$9_@@geua+rpms2x-xer*9oowe'
-SECRET_KEY = SECRET_KEY
+SECRET_KEY = 'cdfc7v**zparvg46@xq3sqd=$9_@@geua+rpms2x-xer*9oowe'
+#  = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
