@@ -32,7 +32,7 @@ SECRET_KEY = 'cdfc7v**zparvg46@xq3sqd=$9_@@geua+rpms2x-xer*9oowe'
 # = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['gusto-t-09-03-21.herokuapp.com']
 
