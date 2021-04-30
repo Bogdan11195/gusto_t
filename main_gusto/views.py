@@ -21,13 +21,12 @@ def main(request):
     for item in categories:
         item.dishes = Dish.objects.filter(category=item.pk)
 
-
     events = Event.objects.filter(event_date__gte=datetime.date.today())
 
     users_messages_form = UserMessageForm()
 
-    return render(request, 'index.html', context={'categories':categories,
-                                                  'special_categories':special_categories,
+    return render(request, 'index.html', context={'categories': categories,
+                                                  'special_categories': special_categories,
                                                   'events': events,
                                                   'banners': banners,
                                                   'form': users_messages_form,
