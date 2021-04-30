@@ -2,6 +2,7 @@ from django.shortcuts import render
 from main_gusto.models import UsersMessages
 from django.core.paginator import Paginator
 
+
 # Create your views here.
 def messages_view(request):
     messages = UsersMessages.objects.filter(is_processed=False).order_by('send_date')

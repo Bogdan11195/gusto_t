@@ -2,6 +2,7 @@ from django.db import models
 from uuid import uuid4
 import os
 
+
 # Create your models here.
 class Category(models.Model):
     title = models.CharField(max_length=50)
@@ -11,6 +12,7 @@ class Category(models.Model):
 
     def __str__(self):
         return f'{self.title} : {self.category_order}'
+
 
 class Dish(models.Model):
 
@@ -56,6 +58,7 @@ class Banners(models.Model):
 
 def __str__(self):
     return f'{self.title}'
+
 
 class UsersMessages(models.Model):
 
